@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    position: relative;
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: #eee;
+
+    >ul {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        display: flex;
+
+        >li {
+            position: relative;
+            width: 130px;
+            background-color: aqua;
+            text-align: center;
+
+            >a {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 50px;
+                padding: 0 3px;
+                font: bold 17px/50px "맑은 고딕";
+                &::before{
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 10px;
+                    border-bottom: 3px solid black;
+                    position: absolute;
+                    bottom: 10px;
+                    left: 50%;
+                    transform: translateX(-50%) scaleX(0%);
+                    transition: 0.3s;
+                }
+                &:hover{
+                    &::before{
+                        transform: translate(-50%) scaleX(100%);
+                    }
+                }
+            }
+
+            .sub {
+                width: 100%;
+                height: 90px;
+                position: absolute;
+                top: 50px;
+                // padding: 10px 0;4
+                background-color: #aaa;
+                li{
+                    width: 100%;
+                    a{
+                        position: relative;
+                        // 비포 에프터로 선 그을 때 기준점 잡아주려고 하는 거임
+                        display: inline-block;
+                        height: 30px;
+                        font: bold 15px/30px "맑은 고딕";
+
+                        &::before{
+                            content: '';
+                            display: block;
+                            border-bottom: 16px solid rgb(76,232,29);
+                            position: absolute;
+                            opacity: 0.7;
+                            width: 0;
+                            left: 0;
+                            bottom: 6px;
+                            transition: 0.5s;
+                        }
+                        &:hover{
+                            &::before{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
