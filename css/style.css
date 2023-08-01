@@ -51,12 +51,13 @@ header > ul > li > a::before {
   border-bottom: 3px solid black;
   position: absolute;
   bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%) scaleX(0%);
+  left: 0%;
+  transform: scaleX(0%);
+  transform-origin: left center;
   transition: 0.3s;
 }
 header > ul > li > a:hover::before {
-  transform: translate(-50%) scaleX(100%);
+  transform: scaleX(100%);
 }
 header > ul > li .sub {
   width: 100%;
